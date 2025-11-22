@@ -1,5 +1,28 @@
 @import "tailwindcss";
 
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+  }
+
+  img {
+    vertical-align: middle;
+  }
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  ul,
+  li,
+  ol {
+    list-style: none;
+  }
+}
 /* fONTS */
 @theme {
   --font-source: "Source Sans 3", sans-serif;
@@ -29,4 +52,13 @@
     padding-left: 1rem; /* DEFAULT */
     padding-right: 1rem;
   }
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #ffb800 0%, #ff8a00 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
 }

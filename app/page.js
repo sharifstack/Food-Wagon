@@ -1,11 +1,12 @@
-import Image from "next/image";
+import React from "react";
+import Header from "./components/Header/Index";
 
-export default function Home() {
+const Home = () => {
   return (
-    <div className=" ">
-      <main className="">
-        <div className="container font-source text-primary">dadmawda</div>
-      </main>
+    <div>
+      <Header />
     </div>
   );
-}
+};
+
+export default Home;
