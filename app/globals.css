@@ -33,7 +33,7 @@
 /* COLORS */
 @theme {
   --color-primary: #ffb30e;
-  --color-F17228: #f17228;
+  --color-text: #f17228;
   --color-757575: #757575;
   --color-FFFFFF: #ffffff;
   --color-warning: #f17228;
@@ -41,6 +41,7 @@
   --color-FFB20E: #ffb20e;
   --color-212121: #212121;
   --color-success: #79b93c;
+  --color-504F4F: #504f4f;
 }
 /* COLORS */
 
