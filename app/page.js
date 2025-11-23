@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./components/Header/Index";
 import Banner from "./components/Banner/Index";
 import FlashDeals from "./components/FlashDeals/Index";
+import Guide from "./components/Guide.jsx/Index";
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
       <Header />
       <Banner />
       <FlashDeals />
+      <Guide/>
     </div>
   );
 };

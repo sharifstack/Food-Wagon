@@ -5,7 +5,7 @@ const FlashDealCard = ({ src, offtext, foodname, remaining }) => {
   return (
     <div className=" flex flex-col ">
       <div className="image relative  ">
-        <Image className="rounded-2xl" src={src} width={357} />
+        <Image className="rounded-2xl" src={src} alt="" width={357} />
         <div className="Percentage-Off absolute left-0 top-full -translate-y-full ">
           <span className="w-[140px] h-[83px] bg-primary rounded-tr-4xl rounded-bl-2xl  block pl-[18px] pr-[50px] py-2.5"></span>
           <div className="absolute left-3 bottom-1">
