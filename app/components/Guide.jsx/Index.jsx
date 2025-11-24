@@ -1,29 +1,32 @@
 import React from "react";
-import { FaLocationDot } from "react-icons/fa6";
-
+import Image from "next/image";
 const Guide = () => {
   const guideInfo = [
     {
       id: 1,
       name: "Select location",
       p: "Choose the location where your food will be delivered.",
+      img: "/assets/guide/map.png",
     },
 
     {
       id: 2,
       name: "Choose order",
       p: "Check over hundreds of menus to pick your favorite food",
+      img: "/assets/guide/menu.png",
     },
 
     {
       id: 3,
       name: "Pay advanced",
       p: "It's quick, safe, and simple. Select several methods of payment",
+      img: "/assets/guide/invoice.png",
     },
     {
       id: 4,
-      name: "Choose order Enjoy meals",
+      name: "Enjoy meals",
       p: "Food is made and delivered directly to your home.",
+      img: "/assets/guide/donut.png",
     },
   ];
 
@@ -35,10 +38,22 @@ const Guide = () => {
             How does it work
           </h2>
 
-          <div className="infomration">
-            <span className="">
-              <FaLocationDot className="w-[86px] h-28 text-[#FFAE00] drop-shadow-[0_4px_8px_rgba(255,205,30,0.7)]" />
-            </span>
+          <div className="infomration mt-[72px]">
+            <div className="flex items-end gap-8 ">
+              {guideInfo?.map((item) => (
+                <div className="flex flex-col items-center hover:scale-110  transition-all duration-200 cursor-pointer" key={item.id}>
+                  <Image src={item.img} width={200} height={0} alt="img" />
+                  <div className="texts text-center">
+                    <h4 className="font-source font-bold text-[22px] text-[#434343]">
+                      {item.name}
+                    </h4>
+                    <p className="font-sans font-normal text-lg text-[#9e9e9e]">
+                      {item.p}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
