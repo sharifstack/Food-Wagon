@@ -3,6 +3,7 @@ import Header from "./components/Header/Index";
 import Banner from "./components/Banner/Index";
 import FlashDeals from "./components/FlashDeals/Index";
 import Guide from "./components/Guide.jsx/Index";
+import PopularItems from "./components/PopularItems/Index";
 
 const Home = () => {
   return (
@@ -10,7 +11,8 @@ const Home = () => {
       <Header />
       <Banner />
       <FlashDeals />
-      <Guide/>
+      <Guide />
+      <PopularItems />
     </div>
   );
 };
