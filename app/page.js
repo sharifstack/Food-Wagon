@@ -5,6 +5,8 @@ import FlashDeals from "./components/FlashDeals/Index";
 import Guide from "./components/Guide.jsx/Index";
 import PopularItems from "./components/PopularItems/Index";
 import FeaturedRestaurants from "./components/FeaturedRestaurants/Index";
+import SearchByFood from "./components/SearchByFood/Index";
+import AppInfo from "./components/AppInfor/Index";
 
 const Home = () => {
   return (
@@ -15,6 +17,8 @@ const Home = () => {
       <Guide />
       <PopularItems />
       <FeaturedRestaurants />
+      <SearchByFood />
+      <AppInfo/>
     </div>
   );
 };
