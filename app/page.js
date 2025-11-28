@@ -4,6 +4,7 @@ import Banner from "./components/Banner/Index";
 import FlashDeals from "./components/FlashDeals/Index";
 import Guide from "./components/Guide.jsx/Index";
 import PopularItems from "./components/PopularItems/Index";
+import FeaturedRestaurants from "./components/FeaturedRestaurants/Index";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <FlashDeals />
       <Guide />
       <PopularItems />
+      <FeaturedRestaurants />
     </div>
   );
 };

@@ -62,7 +62,7 @@ const Banner = () => {
           </div>
           <div className="right w-2/5 relative">
             <div className="absolute right-0 top-full -translate-y-full">
-              <Image src={banner} width={0} height={0} />
+              <Image src={banner} width={0} height={0} alt="image" />
             </div>
           </div>
         </div>
