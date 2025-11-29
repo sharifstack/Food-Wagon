@@ -37,7 +37,12 @@ const Details = () => {
             </div>
             <div className="right w-2/3">
               <div className="image">
-                <Image className="rounded-2xl" src={img1} width={983} />
+                <Image
+                  className="rounded-r-2xl"
+                  src={img1}
+                  width={983}
+                  alt="item1image"
+                />
               </div>
             </div>
           </div>
@@ -69,7 +74,12 @@ const Details = () => {
             </div>
             <div className="right w-2/3">
               <div className="image">
-                <Image className="rounded-2xl" src={img2} width={983} />
+                <Image
+                  className="rounded-l-2xl"
+                  src={img2}
+                  width={983}
+                  alt="item2image"
+                />
               </div>
             </div>
           </div>
@@ -101,7 +111,12 @@ const Details = () => {
             </div>
             <div className="right w-2/3 ">
               <div className="image">
-                <Image className="rounded-2xl" src={img3} width={983} />
+                <Image
+                  className="rounded-r-2xl"
+                  src={img3}
+                  width={983}
+                  alt="item3image"
+                />
               </div>
             </div>
           </div>
