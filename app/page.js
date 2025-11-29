@@ -9,6 +9,7 @@ import SearchByFood from "./components/SearchByFood/Index";
 import AppInfo from "./components/AppInfor/Index";
 import Details from "./components/Details/Index";
 import ReadyToOrder from "./components/ReadyToOrder/Index";
+import Footer from "./components/ui/Footer/Index";
 
 const Home = () => {
   return (
@@ -23,6 +24,7 @@ const Home = () => {
       <AppInfo />
       <Details />
       <ReadyToOrder />
+      <Footer/>
     </div>
   );
 };
