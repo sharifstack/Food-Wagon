@@ -8,6 +8,7 @@ import FeaturedRestaurants from "./components/FeaturedRestaurants/Index";
 import SearchByFood from "./components/SearchByFood/Index";
 import AppInfo from "./components/AppInfor/Index";
 import Details from "./components/Details/Index";
+import ReadyToOrder from "./components/ReadyToOrder/Index";
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
       <SearchByFood />
       <AppInfo />
       <Details />
+      <ReadyToOrder />
     </div>
   );
 };
