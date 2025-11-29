@@ -85,6 +85,7 @@ const SearchByFood = () => {
                     src={item.img}
                     width={218}
                     height={218}
+                    alt="SearchByFoodImage"
                   />
                   <h6 className="text-xl text-212121 font-source font-bold">
                     {item.title}

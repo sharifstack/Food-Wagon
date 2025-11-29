@@ -7,6 +7,7 @@ import PopularItems from "./components/PopularItems/Index";
 import FeaturedRestaurants from "./components/FeaturedRestaurants/Index";
 import SearchByFood from "./components/SearchByFood/Index";
 import AppInfo from "./components/AppInfor/Index";
+import Details from "./components/Details/Index";
 
 const Home = () => {
   return (
@@ -18,7 +19,8 @@ const Home = () => {
       <PopularItems />
       <FeaturedRestaurants />
       <SearchByFood />
-      <AppInfo/>
+      <AppInfo />
+      <Details />
     </div>
   );
 };

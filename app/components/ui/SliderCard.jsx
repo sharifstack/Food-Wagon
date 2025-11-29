@@ -7,7 +7,7 @@ const SliderCard = ({ src, title, location, price }) => {
     <div className="">
       <div className="card">
         <div className="image">
-          <Image src={src} width={283} height={283} />
+          <Image src={src} width={283} height={283} alt="SliderCard" />
         </div>
         <div className="texts my-4">
           <h4 className="title font-source font-bold text-xl text-424242">

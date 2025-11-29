@@ -13,7 +13,7 @@ const AppInfo = () => {
   return (
     <div className="pt-[130px] mb-20 z-10  ">
       <div className="bg relative ">
-        <Image className="-z-20 " src={bg} width={7216} />
+        <Image className="bgImage -z-20 " src={bg} width={8000} height={0} alt="bgImage"/>
 
         <div className="container z-50 absolute left-1/2 top-full  -translate-x-1/2  -translate-y-full">
           <div className="card flex justify-center pb-40">
