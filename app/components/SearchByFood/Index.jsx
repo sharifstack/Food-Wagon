@@ -15,7 +15,6 @@ const SearchByFood = () => {
     { id: 6, img: "/assets/Foods/food6.png", title: "Steak" },
     { id: 2, img: "/assets/Foods/food2.png", title: "Noodles" },
     { id: 3, img: "/assets/Foods/food3.png", title: "Burger" },
-
   ];
 
   let sliderRef = useRef(null);
@@ -26,6 +25,7 @@ const SearchByFood = () => {
     slidesToShow: 6,
     slidesToScroll: 1,
     arrows: true,
+    autoplay: true,
   };
 
   const next = () => {

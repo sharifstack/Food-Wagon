@@ -53,6 +53,17 @@
     padding-left: 1rem; /* DEFAULT */
     padding-right: 1rem;
   }
+
+  .bglayer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2920px;
+    height: 2920px;
+    border-radius: 100%;
+    background-color: #feefd0;
+    z-index: 1;
+  }
 }
 
 .gradient-text {
