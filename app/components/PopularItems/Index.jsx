@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import SliderCard from "../ui/SliderCard";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import ScrollReveal from "../Animation/ScrollReveal";
 
 const PopularItems = () => {
   const itemsinfo = [
@@ -91,51 +92,53 @@ const PopularItems = () => {
   };
 
   return (
-    <div className="my-20">
-      <div className="container">
-        <div className="heading mb-[88px] text-center">
-          <h1 className="font-source font-bold text-[43px] text-212121">
-            Popular items
-          </h1>
-        </div>
-        <div className="cards cursor-pointer relative">
-          <div className="Arrows flex cursor-pointer">
-            <div
-              onClick={previous}
-              className="hidden sm:flex absolute left-0 -translate-x-full top-2/5 -translate-y-1/2  z-20 drop-shadow-2xl drop-shadow-[#FFB20E]/50"
-            >
-              <span className="bg-Secondary_F5F5F5 block rounded-full p-2.5 border bg-[#FFB20E] sm:border-0">
-                <IoIosArrowBack className="sm:w-10 sm:h-10 text-FFFFFF" />
-              </span>
-            </div>
-
-            <div
-              onClick={next}
-              className="hidden sm:flex absolute right-0 translate-x-full top-2/5 -translate-y-full z-20 drop-shadow-2xl drop-shadow-[#FFB20E]/50"
-            >
-              <span className="bg-Secondary_F5F5F5 block rounded-full p-2.5 border sm:border-0 bg-[#FFB20E]">
-                <IoIosArrowForward className="sm:w-10 sm:h-10 text-FFFFFF" />
-              </span>
-            </div>
+    <ScrollReveal>
+      <div className="my-20">
+        <div className="container">
+          <div className="heading mb-[88px] text-center">
+            <h1 className="font-source font-bold text-[43px] text-212121">
+              Popular items
+            </h1>
           </div>
-          <Slider ref={sliderRef} {...settings}>
-            {itemsinfo.map((item) => (
+          <div className="cards cursor-pointer relative">
+            <div className="Arrows flex cursor-pointer">
               <div
-                key={item.id}
-                className="hover:scale-102 transition-all duration-200 px-2 py-5"
+                onClick={previous}
+                className="hidden sm:flex absolute left-0 -translate-x-full top-2/5 -translate-y-1/2  z-20 drop-shadow-2xl drop-shadow-[#FFB20E]/50"
               >
-                <SliderCard
-                  src={item.img1}
-                  title={item.title}
-                  location={item.location}
-                  price={item.price}
-                />
+                <span className="bg-Secondary_F5F5F5 block rounded-full p-2.5 border bg-[#FFB20E] sm:border-0">
+                  <IoIosArrowBack className="sm:w-10 sm:h-10 text-FFFFFF" />
+                </span>
               </div>
-            ))}
-          </Slider>
+
+              <div
+                onClick={next}
+                className="hidden sm:flex absolute right-0 translate-x-full top-2/5 -translate-y-full z-20 drop-shadow-2xl drop-shadow-[#FFB20E]/50"
+              >
+                <span className="bg-Secondary_F5F5F5 block rounded-full p-2.5 border sm:border-0 bg-[#FFB20E]">
+                  <IoIosArrowForward className="sm:w-10 sm:h-10 text-FFFFFF" />
+                </span>
+              </div>
+            </div>
+            <Slider ref={sliderRef} {...settings}>
+              {itemsinfo.map((item) => (
+                <div
+                  key={item.id}
+                  className="hover:scale-102 transition-all duration-200 px-2 py-5"
+                >
+                  <SliderCard
+                    src={item.img1}
+                    title={item.title}
+                    location={item.location}
+                    price={item.price}
+                  />
+                </div>
+              ))}
+            </Slider>
+          </div>
         </div>
       </div>
-    </div>
+    </ScrollReveal>
   );
 };
 

@@ -24,7 +24,7 @@ const Home = () => {
       <AppInfo />
       <Details />
       <ReadyToOrder />
-      <Footer/>
+      <Footer />
     </div>
   );
 };

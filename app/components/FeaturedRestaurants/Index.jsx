@@ -1,6 +1,7 @@
 import React from "react";
 import FeaturedRestaurantsCard from "../ui/FeaturedRestaurantsCard";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import ScrollReveal from "../Animation/ScrollReveal";
 
 const FeaturedRestaurants = () => {
   const resturentInfo = [
@@ -82,39 +83,41 @@ const FeaturedRestaurants = () => {
     },
   ];
   return (
-    <div className="my-20">
-      <div className="container">
-        <div className="heading text-center mb-22">
-          <h1 className="text-4xl text-212121 font-source font-bold">
-            Featured Restaurants
-          </h1>
-        </div>
-        <div className="flex flex-wrap justify-between gap-y-16">
-          {resturentInfo.map((item) => (
-            <div key={item.id}>
-              <FeaturedRestaurantsCard
-                src={item.img}
-                Discount={item.discount}
-                resuturentimg={item.resturentImg}
-                title={item.title}
-                rating={item.rating}
-                isOpen={item.isOpen}
-              />
-            </div>
-          ))}
-        </div>
-        <div className="Button mt-22 flex justify-center ">
-          <button className="flex items-center gap-2.5 py-5 px-12 rounded-2xl bg-linear-to-r from-[#FFBA26] to-[#FF9A0E] shadow-2xl shadow-[#FFAE00]/50 cursor-pointer hover:scale-105 transition-all duration-200">
-            <h6 className="text-FFFFFF font-source font-bold text-xl">
-              View All
-            </h6>
-            <span>
-              <MdOutlineKeyboardArrowRight className="text-3xl text-FFFFFF" />
-            </span>
-          </button>
+    <ScrollReveal>
+      <div className="my-20">
+        <div className="container">
+          <div className="heading text-center mb-22">
+            <h1 className="text-4xl text-212121 font-source font-bold">
+              Featured Restaurants
+            </h1>
+          </div>
+          <div className="flex flex-wrap justify-between gap-y-16">
+            {resturentInfo.map((item) => (
+              <div key={item.id}>
+                <FeaturedRestaurantsCard
+                  src={item.img}
+                  Discount={item.discount}
+                  resuturentimg={item.resturentImg}
+                  title={item.title}
+                  rating={item.rating}
+                  isOpen={item.isOpen}
+                />
+              </div>
+            ))}
+          </div>
+          <div className="Button mt-22 flex justify-center ">
+            <button className="flex items-center gap-2.5 py-5 px-12 rounded-2xl bg-linear-to-r from-[#FFBA26] to-[#FF9A0E] shadow-2xl shadow-[#FFAE00]/50 cursor-pointer hover:scale-105 transition-all duration-200">
+              <h6 className="text-FFFFFF font-source font-bold text-xl">
+                View All
+              </h6>
+              <span>
+                <MdOutlineKeyboardArrowRight className="text-3xl text-FFFFFF" />
+              </span>
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+    </ScrollReveal>
   );
 };
 
