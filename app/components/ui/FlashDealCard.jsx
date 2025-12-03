@@ -23,11 +23,11 @@ const FlashDealCard = ({ src, offtext, foodname, remaining }) => {
           </div>
         </div>
       </div>
-      <div className="text mt-8">
-        <h4 className="font-source font-bold text-[22px] text-424242 mb-5">
+      <div className="text mt-3 sm:mt-8">
+        <h4 className="font-source font-bold text-lg sm:text-[22px] text-424242 mb-2 sm:mb-5">
           {foodname}
         </h4>
-        <span className="font-source font-bold text-[22px] text-warning bg-warning/20 px-4 py-2.5 rounded-lg">
+        <span className="font-source font-bold text-lg sm:text-[22px] text-warning bg-warning/20 px-4 py-2.5 rounded-lg">
           {remaining}
         </span>
       </div>

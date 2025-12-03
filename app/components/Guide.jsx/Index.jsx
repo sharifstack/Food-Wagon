@@ -33,15 +33,15 @@ const Guide = () => {
 
   return (
     <ScrollReveal>
-      <div className="py-20 bg-linear-to-b from-[#FFCE67]/25  to-[#FDEDCA]/22 ">
+      <div className="py-10 sm:py-20 bg-linear-to-b from-[#FFCE67]/25  to-[#FDEDCA]/22 ">
         <div className="container">
           <div className="">
-            <h2 className="font-source font-bold text-[43px] text-[#F17228] text-center">
+            <h2 className="font-source font-bold text-3xl sm:text-[43px] text-[#F17228] text-center">
               How does it work
             </h2>
 
-            <div className="infomration mt-[72px]">
-              <div className="flex items-end gap-8 ">
+            <div className="infomration mt-10 sm:mt-[72px]">
+              <div className="flex flex-wrap sm:flex-nowrap items-end gap-4 sm:gap-8 ">
                 {guideInfo?.map((item) => (
                   <div
                     className="flex flex-col items-center hover:scale-110  transition-all duration-200 cursor-pointer"

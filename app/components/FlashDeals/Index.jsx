@@ -9,9 +9,9 @@ import ScrollReveal from "../Animation/ScrollReveal";
 const FlashDeals = () => {
   return (
     <ScrollReveal>
-      <div className="my-20">
+      <div className="my-10 sm:my-20">
         <div className="container">
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-6 sm:gap-4">
             <FlashDealCard
               src={card1}
               offtext={"15"}

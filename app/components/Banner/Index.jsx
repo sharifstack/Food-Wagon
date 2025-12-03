@@ -25,7 +25,7 @@ const Banner = () => {
                 </div>
               </AnimatedWrapper>
               <AnimatedWrapper>
-                <div className="searchBar  sm:w-[856px] border">
+                <div className="searchBar  sm:w-[856px] ">
                   <div className="top flex gap-2 border-b border-black/10 px-5  py-6 sm:pl-6 rounded-t-lg bg-FFFFFF">
                     <div className="DeliveryButton flex gap-2.5 px-6 py-2.5  hover:rounded-lg text-757575 hover:bg-text/10 cursor-pointer hover:text-text transition-all duration-200">
                       <span>

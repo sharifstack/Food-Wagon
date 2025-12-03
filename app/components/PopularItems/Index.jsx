@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -74,15 +74,40 @@ const PopularItems = () => {
   ];
 
   let sliderRef = useRef(null);
+
+  const [slidesToShow, setSlidesToShow] = useState(5);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+
+      if (width < 480) {
+        setSlidesToShow(1);
+      } else if (width < 768) {
+        setSlidesToShow(1);
+      } else if (width < 1024) {
+        setSlidesToShow(2);
+      } else if (width < 1280) {
+        setSlidesToShow(4);
+      } else {
+        setSlidesToShow(5);
+      }
+    };
+
+    handleResize(); // initial run
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: slidesToShow,
     slidesToScroll: 1,
     arrows: true,
-    autoplay: true,
-  };
+    };
 
   const next = () => {
     sliderRef.current.slickNext();
@@ -93,15 +118,15 @@ const PopularItems = () => {
 
   return (
     <ScrollReveal>
-      <div className="my-20">
+      <div className="my-10 sm:my-20">
         <div className="container">
-          <div className="heading mb-[88px] text-center">
-            <h1 className="font-source font-bold text-[43px] text-212121">
+          <div className="heading mb-10 sm:mb-[88px] text-center">
+            <h1 className="font-source font-bold text-3xl sm:text-[43px] text-212121">
               Popular items
             </h1>
           </div>
-          <div className="cards cursor-pointer relative">
-            <div className="Arrows flex cursor-pointer">
+          <div className="cards  cursor-pointer relative">
+            <div className="Arrows sm:flex cursor-pointer hidden">
               <div
                 onClick={previous}
                 className="hidden sm:flex absolute left-0 -translate-x-full top-2/5 -translate-y-1/2  z-20 drop-shadow-2xl drop-shadow-[#FFB20E]/50"
@@ -124,7 +149,7 @@ const PopularItems = () => {
               {itemsinfo.map((item) => (
                 <div
                   key={item.id}
-                  className="hover:scale-102 transition-all duration-200 px-2 py-5"
+                  className="sm:hover:scale-102 sm:transition-all sm:duration-200 px-2 py-5 "
                 >
                   <SliderCard
                     src={item.img1}
