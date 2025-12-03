@@ -10,21 +10,39 @@ const Header = () => {
     <ScrollReveal>
       <div>
         <div className="container">
-          <div className="flex justify-between items-center py-4 ">
-            <div className="Logo flex items-center gap-3">
+          <div className="Location sm:hidden items-center gap-1 sm:gap-3 flex truncate py-2">
+            <h2 className="font-source font-bold text-sm sm:text-[18px]">
+              Deliver to:
+            </h2>
+            <div className="flex gap-1 items-center">
+              <div className="flex items-center gap-1 sm:gap-2.5">
+                <span>
+                  <FaLocationDot className="text-primary sm:text-xl" />
+                </span>
+                <h2 className="font-sans text-sm sm:text-[18px] text-424242">
+                  Current Locations
+                </h2>
+              </div>
+              <h2 className="font-sans text-sm sm:text-[18px]  text-424242 font-bold">
+                Mohammadpur Bus Stand, Dhaka
+              </h2>
+            </div>
+          </div>
+          <div className="flex justify-between items-center py-2 sm:py-4 ">
+            <div className="Logo flex items-center gap-1 sm:gap-3">
               <div className="logoimg">
-                <Image src={logo} width={0} height={0} alt="image" />
+                <Image src={logo} width={28} height={28} alt="image" />
               </div>
               <div className="Logoname flex items-center">
-                <h2 className="font-source text-3xl text-warning font-bold ">
+                <h2 className="font-source text-2xl sm:text-3xl text-warning font-bold ">
                   food
                 </h2>
-                <h2 className="font-source text-3xl text-primary font-bold ">
+                <h2 className="font-source text-2xl sm:text-3xl text-primary font-bold ">
                   waGon
                 </h2>
               </div>
             </div>
-            <div className="Location flex items-center gap-3">
+            <div className="Location sm:flex items-center gap-3 hidden">
               <h2 className="font-source font-bold text-[18px]">Deliver to:</h2>
               <div className="flex gap-1 items-center">
                 <div className="flex items-center gap-2.5">
@@ -41,7 +59,7 @@ const Header = () => {
               </div>
             </div>
             <div className="Login flex gap-8">
-              <div className="searchBar flex items-center gap-2">
+              <div className="searchBar sm:flex items-center gap-2  hidden">
                 <span>
                   <FaSearch className="text-xl text-primary" />
                 </span>
@@ -49,7 +67,7 @@ const Header = () => {
                   Search Food
                 </h4>
               </div>
-              <button className="login flex items-center gap-2.5 px-6 py-3.5 shadow-primary/50 shadow-2xl rounded-lg cursor-pointer">
+              <button className="LoginButton flex items-center gap-2.5 px-6 py-2 sm:py-3.5 shadow-primary/50 shadow-2xl rounded-lg cursor-pointer ">
                 <span className=" ">
                   <FaUser className="text-xl text-primary " />
                 </span>

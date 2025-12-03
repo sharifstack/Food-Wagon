@@ -65,7 +65,7 @@ const Footer = () => {
             <div className="Contacts pt-16 pb-24 border-b  border-424242">
               <div className="flex justify-between">
                 <div className="left w-2/5">
-                  <ul className="flex items-center justify-between">
+                  <ul className="flex items-start justify-between">
                     <div className="Company">
                       <div className="heading mb-10">
                         <h5 className="font-source font-bold text-xl text-FFFFFF">
@@ -148,7 +148,7 @@ const Footer = () => {
             </div>
           </ScrollReveal>
           <ScrollReveal>
-            <div className="mt-4 pb-22 flex justify-center">
+            <div className="mt-4 pb-16 flex justify-center">
               <div className="flex items-center gap-2.5">
                 <h4 className="font-sans font-normal text-base text-[#F5F5F5]">
                   All rights Reserved
