@@ -69,7 +69,7 @@ const Header = () => {
                 </h4>
               </div>
               <Link href="/login">
-                <button className="LoginButton flex items-center gap-2.5 px-6 py-2 sm:py-3.5 shadow-primary/50 shadow-2xl rounded-lg cursor-pointer ">
+                <button className="LoginButton flex items-center gap-2.5 px-6 py-2 sm:py-3.5 shadow-primary/50 shadow-2xl rounded-lg cursor-pointer hover:shadow-lg hover:shadow-black/40 transition-all duration-200 ">
                   <span className=" ">
                     <FaUser className="text-xl text-primary " />
                   </span>
