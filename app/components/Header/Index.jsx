@@ -4,6 +4,7 @@ import Image from "next/image";
 import { FaLocationDot, FaUser } from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
 import ScrollReveal from "../Animation/ScrollReveal";
+import Link from "next/link";
 
 const Header = () => {
   return (
@@ -67,14 +68,16 @@ const Header = () => {
                   Search Food
                 </h4>
               </div>
-              <button className="LoginButton flex items-center gap-2.5 px-6 py-2 sm:py-3.5 shadow-primary/50 shadow-2xl rounded-lg cursor-pointer ">
-                <span className=" ">
-                  <FaUser className="text-xl text-primary " />
-                </span>
-                <h4 className="font-source font-bold text-[18px] gradient-text">
-                  Login
-                </h4>
-              </button>
+              <Link href="/login">
+                <button className="LoginButton flex items-center gap-2.5 px-6 py-2 sm:py-3.5 shadow-primary/50 shadow-2xl rounded-lg cursor-pointer ">
+                  <span className=" ">
+                    <FaUser className="text-xl text-primary " />
+                  </span>
+                  <h4 className="font-source font-bold text-[18px] gradient-text">
+                    Login
+                  </h4>
+                </button>
+              </Link>
             </div>
           </div>
         </div>
