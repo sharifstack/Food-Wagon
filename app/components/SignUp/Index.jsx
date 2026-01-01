@@ -1,6 +1,37 @@
-import Link from "next/link";
+"use client";
 
-export default function SignupForm() {
+import Link from "next/link";
+import { useRegisterUser } from "../../hooks/api";
+import { useRouter } from "next/navigation";
+
+export default function SignUpForm() {
+  const router = useRouter();
+  const { mutate, isPending, isSuccess, error } = useRegisterUser();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const password = e.target.password.value;
+    const confirmPassword = e.target.confirmPassword.value;
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match");
+      return;
+    }
+
+    mutate(
+      {
+        email: e.target.email.value,
+        password,
+      },
+      {
+        onSuccess: () => {
+          router.push("/login"); // ✅ redirect
+        },
+      }
+    );
+  };
+
   return (
     <div className="w-full mx-auto my-[20vh] max-w-md bg-white rounded-2xl shadow-2xl p-8">
       {/* Heading */}
@@ -14,38 +45,61 @@ export default function SignupForm() {
       </div>
 
       {/* Form */}
-      <form className="space-y-4">
+      <form className="space-y-4" onSubmit={handleSubmit}>
         <input
           type="text"
+          name="fullName"
           placeholder="Full Name"
+          required
           className="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-orange-400 outline-none"
         />
 
         <input
           type="email"
+          name="email"
           placeholder="Email Address"
+          required
           className="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-orange-400 outline-none"
         />
 
         <input
           type="password"
+          name="password"
           placeholder="Password"
+          required
           className="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-orange-400 outline-none"
         />
 
         <input
           type="password"
+          name="confirmPassword"
           placeholder="Confirm Password"
+          required
           className="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-orange-400 outline-none"
         />
 
         <button
           type="submit"
-          className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded-xl transition shadow-md"
+          disabled={isPending}
+          className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded-xl transition shadow-md disabled:opacity-60"
         >
-          Create Account
+          {isPending ? "Creating..." : "Create Account"}
         </button>
       </form>
+
+      {/* Success message */}
+      {isSuccess && (
+        <p className="text-green-500 text-center mt-4">
+          Account created successfully
+        </p>
+      )}
+
+      {/* Error message */}
+      {error && (
+        <p className="text-red-500 text-center mt-4">
+          {error.message || "Signup failed"}
+        </p>
+      )}
 
       {/* Footer */}
       <p className="text-center text-sm text-gray-500 mt-6">

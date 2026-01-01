@@ -56,11 +56,11 @@ const Banner = () => {
                       </span>
                     </div>
                     <div className="flex justify-center">
-                      <div className="button flex items-center gap-2.5  py-2.5 sm:py-5 px-6 sm:px-12 rounded-lg cursor-pointer bg-[#F65900]">
+                      <div className="button flex items-center gap-2.5  py-2.5 sm:py-5 px-6 sm:px-12 rounded-lg cursor-pointer  bg-[#F65900]">
                         <span>
                           <FaSearch className="text-xl text-FFFFFF" />
                         </span>
-                        <button className="font-source font-bold text-[18px] text-FFFFFF">
+                        <button className="font-source font-bold text-[18px] text-FFFFFF cursor-pointer">
                           Find Food
                         </button>
                       </div>
@@ -69,10 +69,16 @@ const Banner = () => {
                 </div>
               </AnimatedWrapper>
             </div>
-            <div className="right w-2/5 sm:flex relative hidden">
+            <div className="right w-2/5 sm:flex relative hidden ">
               <div className="absolute right-0 top-full -translate-y-full">
                 <AnimatedWrapper>
-                  <Image src={banner} width={0} height={0} alt="image" />
+                  <Image
+                    className="cursor-pointer"
+                    src={banner}
+                    width={0}
+                    height={0}
+                    alt="image"
+                  />
                 </AnimatedWrapper>
               </div>
             </div>
