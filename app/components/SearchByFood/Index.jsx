@@ -81,9 +81,9 @@ const SearchByFood = () => {
             <Slider ref={sliderRef} {...settings}>
               {foods.map((item) => (
                 <div className="">
-                  <div className="image flex flex-col items-center gap-7 cursor-pointer">
+                  <div className="image flex flex-col items-center sm:gap-7 cursor-pointer">
                     <Image
-                      className="rounded-full hover:scale-105 transition-all duration-200 py-2"
+                      className="max-w-full rounded-full  hover:scale-105 transition-all duration-200 py-2"
                       src={item.img}
                       width={218}
                       height={218}

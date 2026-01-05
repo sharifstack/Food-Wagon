@@ -12,7 +12,7 @@ import ScrollReveal from "../Animation/ScrollReveal";
 
 const AppInfo = () => {
   return (
-    <div className="pt-[130px] mb-20 z-10  ">
+    <div className="pt-[130px] mb-20 z-10 ">
       <div className="bg relative ">
         <Image
           className="bgImage -z-20 "

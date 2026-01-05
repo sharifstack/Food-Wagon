@@ -88,11 +88,11 @@ const Header = () => {
                 {/* Profile Button */}
                 <button
                   onClick={() => setOpen(!open)}
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg shadow-lg"
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg shadow-lg cursor-pointer"
                 >
                   <FaUser className="text-primary" />
                   <span className="font-source font-bold text-sm">
-                    {user.userEmail}
+                    {user.userEmail.split("@")[0]}
                   </span>
                 </button>
 
@@ -101,21 +101,21 @@ const Header = () => {
                   <div className="absolute right-0 mt-2 w-full bg-white rounded-lg shadow-xl z-50!">
                     <Link
                       href="/userprofile"
-                      className="block px-4 py-2 hover:bg-gray-100"
+                      className="block px-3 py-2 hover:bg-gray-100"
                       onClick={() => setOpen(false)}
                     >
                       Edit Profile
                     </Link>
                     <Link
                       href="/usersettings"
-                      className="block px-4 py-2 hover:bg-gray-100"
+                      className="block px-3 py-2 hover:bg-gray-100"
                       onClick={() => setOpen(false)}
                     >
                       Settings
                     </Link>
                     <button
                       onClick={handleLogout}
-                      className="block w-full text-left px-4 py-2 text-red-500 hover:bg-gray-100"
+                      className="block w-full text-left px-3 py-2 text-red-500 hover:bg-gray-100"
                     >
                       Logout
                     </button>

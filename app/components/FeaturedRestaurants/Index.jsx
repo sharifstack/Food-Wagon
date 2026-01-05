@@ -83,41 +83,39 @@ const FeaturedRestaurants = () => {
     },
   ];
   return (
-    <ScrollReveal>
-      <div className="my-20">
-        <div className="container">
-          <div className="heading text-center mb-22">
-            <h1 className="text-4xl text-212121 font-source font-bold">
-              Featured Restaurants
-            </h1>
-          </div>
-          <div className="flex flex-wrap justify-between gap-y-16">
-            {resturentInfo.map((item) => (
-              <div key={item.id}>
-                <FeaturedRestaurantsCard
-                  src={item.img}
-                  Discount={item.discount}
-                  resuturentimg={item.resturentImg}
-                  title={item.title}
-                  rating={item.rating}
-                  isOpen={item.isOpen}
-                />
-              </div>
-            ))}
-          </div>
-          <div className="Button mt-22 flex justify-center ">
-            <button className="flex items-center gap-2.5 py-5 px-12 rounded-2xl bg-linear-to-r from-[#FFBA26] to-[#FF9A0E] shadow-2xl shadow-[#FFAE00]/50 cursor-pointer hover:scale-105 transition-all duration-200">
-              <h6 className="text-FFFFFF font-source font-bold text-xl">
-                View All
-              </h6>
-              <span>
-                <MdOutlineKeyboardArrowRight className="text-3xl text-FFFFFF" />
-              </span>
-            </button>
-          </div>
+    <div className="sm:my-20 my-10">
+      <div className="container">
+        <div className="heading text-center mb-10 sm:mb-[88px]">
+          <h1 className="sm:text-4xl text-3xl text-212121 font-source font-bold">
+            Featured Restaurants
+          </h1>
+        </div>
+        <div className="flex flex-wrap sm:justify-between gap-y-16">
+          {resturentInfo.map((item) => (
+            <div key={item.id}>
+              <FeaturedRestaurantsCard
+                src={item.img}
+                Discount={item.discount}
+                resuturentimg={item.resturentImg}
+                title={item.title}
+                rating={item.rating}
+                isOpen={item.isOpen}
+              />
+            </div>
+          ))}
+        </div>
+        <div className="Button mt-11 sm:mt-22 flex justify-center ">
+          <button className="flex items-center gap-2.5 sm:py-5 py-2.5 px-6 sm:px-12 rounded-2xl bg-linear-to-r from-[#FFBA26] to-[#FF9A0E] shadow-2xl shadow-[#FFAE00]/50 cursor-pointer hover:scale-105 transition-all duration-200">
+            <h6 className="text-FFFFFF font-source font-bold text-xl">
+              View All
+            </h6>
+            <span>
+              <MdOutlineKeyboardArrowRight className="text-3xl text-FFFFFF" />
+            </span>
+          </button>
         </div>
       </div>
-    </ScrollReveal>
+    </div>
   );
 };
 
