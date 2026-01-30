@@ -20,10 +20,13 @@ export default function LoginPage() {
         password: e.target.password.value,
       },
       {
-        onSuccess: () => {
+        onSuccess: (data) => {
+          // ✅ save token
+          localStorage.setItem("accessToken", data.token);
+
           router.push("/");
         },
-      }
+      },
     );
   };
 

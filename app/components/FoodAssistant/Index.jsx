@@ -1,15 +1,21 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 export default function FoodAssistant() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
-
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const greetedRef = useRef(false);
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setIsLoggedIn(Boolean(localStorage.getItem("accessToken")));
+    }
+  }, []);
   // greet once
   if (open && !greetedRef.current) {
     greetedRef.current = true;
@@ -133,7 +139,7 @@ You can try:
                 {/* Close */}
                 <button
                   onClick={() => setOpen(false)}
-                  className="text-white/80 hover:text-white transition cursor-pointer"
+                  className="text-white/80 hover:text-white transition "
                 >
                   ✕
                 </button>
@@ -141,39 +147,38 @@ You can try:
             </div>
 
             {/* Messages */}
-            <div className="h-72 overflow-y-auto px-4 py-3 space-y-3 bg-orange-50/40">
+            <div className="relative h-72 overflow-y-auto px-4 py-3 space-y-3 bg-orange-50/40">
               {messages.map((m, i) => (
-                <motion.div
+                <div
                   key={i}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className={`max-w-[85%] px-3 py-2 rounded-2xl text-sm leading-relaxed ${
+                  className={`max-w-[85%] px-3 py-2 rounded-2xl text-sm ${
                     m.role === "user"
-                      ? "ml-auto bg-orange-500 text-white rounded-br-md"
-                      : "bg-white text-gray-800 shadow rounded-bl-md"
+                      ? "ml-auto bg-orange-500 text-white"
+                      : "bg-white shadow"
                   }`}
                 >
                   {m.text}
-                </motion.div>
+                </div>
               ))}
 
-              {loading && (
-                <div className="bg-white w-fit px-3 py-2 rounded-2xl text-xs shadow">
-                  typing…
-                </div>
-              )}
-
-              {!loading && (
-                <div className="flex flex-wrap gap-2 pt-1">
-                  {quickOptions.map((opt) => (
-                    <button
-                      key={opt.label}
-                      onClick={() => sendMessage(opt.value)}
-                      className="text-xs px-3 py-1.5 rounded-full bg-orange-100 hover:bg-orange-200 transition"
+              {/* 🔒 Login required overlay */}
+              {!isLoggedIn && (
+                <div className="absolute inset-0 flex items-center justify-center bg-white/80 backdrop-blur-sm z-10">
+                  <div className="text-center space-y-3">
+                    <div className="text-lg font-semibold text-gray-800">
+                      🔒 Login Required
+                    </div>
+                    <p className="text-sm text-gray-600">
+                      Please login to use Food Assistant
+                    </p>
+                    <Link
+                      href="/login"
+                      className="inline-block bg-orange-500 hover:bg-orange-600 
+                     text-white px-5 py-2 rounded-full text-sm transition"
                     >
-                      {opt.label}
-                    </button>
-                  ))}
+                      Login
+                    </Link>
+                  </div>
                 </div>
               )}
             </div>
@@ -181,13 +186,19 @@ You can try:
             {/* Input */}
             <div className="border-t bg-white px-3 py-2 flex items-center gap-2">
               <input
+                disabled={!isLoggedIn}
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Type food, budget or taste…"
+                placeholder={
+                  isLoggedIn
+                    ? "Type food, budget or taste…"
+                    : "Login to use Food Assistant"
+                }
                 className="flex-1 rounded-full border px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
                 onKeyDown={(e) => e.key === "Enter" && sendMessage()}
               />
               <button
+                disabled={!isLoggedIn || loading}
                 onClick={() => sendMessage()}
                 className="bg-orange-500 hover:bg-orange-600 transition text-white px-4 py-2 rounded-full text-sm"
               >
