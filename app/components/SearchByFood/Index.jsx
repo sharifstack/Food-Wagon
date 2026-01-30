@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Slider from "react-slick";
@@ -18,12 +18,37 @@ const SearchByFood = () => {
     { id: 3, img: "/assets/Foods/food3.png", title: "Burger" },
   ];
 
+  const [slidesToShow, setSlidesToShow] = useState(5);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+
+      if (width < 480) {
+        setSlidesToShow(2);
+      } else if (width < 768) {
+        setSlidesToShow(2);
+      } else if (width < 1024) {
+        setSlidesToShow(2);
+      } else if (width < 1280) {
+        setSlidesToShow(4);
+      } else {
+        setSlidesToShow(5);
+      }
+    };
+
+    handleResize(); // initial run
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   let sliderRef = useRef(null);
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 6,
+    slidesToShow: slidesToShow,
     slidesToScroll: 1,
     arrows: true,
     autoplay: true,
@@ -77,10 +102,10 @@ const SearchByFood = () => {
               </div>
             </div>
           </div>
-          <div className="Foods">
+          <div className="Foods  ">
             <Slider ref={sliderRef} {...settings}>
               {foods.map((item) => (
-                <div className="">
+                <div className="sm:w-full">
                   <div className="image flex flex-col items-center sm:gap-7 cursor-pointer">
                     <Image
                       className="max-w-full rounded-full  hover:scale-105 transition-all duration-200 py-2"
@@ -90,7 +115,7 @@ const SearchByFood = () => {
                       alt="SearchByFoodImage"
                     />
                     <div className=" hover:scale-105 transition-all duration-200">
-                      <h6 className="text-xl text-212121 font-source font-bold">
+                      <h6 className="text-sm sm:text-xl text-212121 font-source font-bold">
                         {item.title}
                       </h6>
                     </div>

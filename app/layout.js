@@ -1,3 +1,4 @@
+import FoodAssistant from "./components/FoodAssistant/Index";
 import "./globals.css";
 import Providers from "./providers";
 
@@ -7,6 +8,7 @@ export default function RootLayout({ children }) {
       <head />
       <body suppressHydrationWarning>
         <Providers>{children}</Providers>
+          <FoodAssistant />
       </body>
     </html>
   );

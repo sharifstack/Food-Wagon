@@ -12,7 +12,7 @@ import ScrollReveal from "../Animation/ScrollReveal";
 
 const AppInfo = () => {
   return (
-    <div className="pt-[130px] mb-20 z-10 ">
+    <div className="pt-[130px] mb-20 z-10 hidden sm:block">
       <div className="bg relative ">
         <Image
           className="bgImage -z-20 "
@@ -22,9 +22,9 @@ const AppInfo = () => {
           alt="bgImage"
         />
 
-        <div className="container z-50 absolute left-1/2 top-full  -translate-x-1/2  -translate-y-full">
+        <div className="container z-50 absolute left-1/2 top-full  -translate-x-1/2  -translate-y-full  ">
           <div className="card flex justify-center pb-40">
-            <div className="p-[55px] max-w-[1230px] rounded-[48px] bg-FFFFFF">
+            <div className="p-[55px]  sm:max-w-[1230px] rounded-[48px] bg-FFFFFF">
               <ScrollReveal>
                 <div className="Card flex items-center gap-14">
                   <div className="icon1 flex items-center gap-14">
